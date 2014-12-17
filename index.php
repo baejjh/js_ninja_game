@@ -22,28 +22,31 @@
 	// Player 1
 	function gameLoop()
 	{
-		$('#ninja_moves_1').css( { left: x, top: y } );
+		$('#ninja_moves_1').css( { left: x1, top: y1 } );
 	}
 	setInterval(gameLoop, 150);
-	var x=0,
-		y=0;
-	// Player 2
-	function gameLoop()
-	{
-		$('#ninja_moves_2').css( { left: x, top: y } );
-	}
-	setInterval(gameLoop, 150);
-	var x 			= 500,
-		y 			= 0,
+	var x1 			= 0,
+		y1 			= 0,
 		horizontal 	= 1,
 		vertical	= 1;
+
+	// Player 2
+	function gameLoop2()
+	{
+		$('#ninja_moves_2').css( { left: x2, top: y2 } );
+	}
+	setInterval(gameLoop2, 150);
+	var x2 			= 500,
+		y2 			= 0,
+		horizontal2 	= 1,
+		vertical2	= 1;
 
 	document.onkeydown = function (e)
 	{
 	// Player 1
-		if(e.keyCode == 37 && x > 0) //left arrow
+		if(e.keyCode == 65 && x1 > 0) //a - left arrow
 		{
-			x = x-10;
+			x1 = x1-10;
 			if((horizontal%2) == 0)
 			{
 				$("#ninja_1").attr("src", "img/left1.png");
@@ -54,9 +57,9 @@
 			}
 			horizontal++
 		}
-		else if(e.keyCode == 38 && y > 0) //up arrow
+		else if(e.keyCode == 83 && y1 > 0) //s - up arrow
 		{
-			y = y-10;
+			y1 = y1-10;
 			if((vertical%2) == 0)
 			{
 				$("#ninja_1").attr("src", "img/up1.png");
@@ -67,9 +70,9 @@
 			}
 			vertical++
 		}
-		else if(e.keyCode == 39 && x < 500) //right arrow
+		else if(e.keyCode == 68 && x1 < 500) //d - right arrow
 		{
-			x = x+10;
+			x1 = x1+10;
 			if((horizontal%2) == 0)
 			{
 				$("#ninja_1").attr("src", "img/right1.png");
@@ -80,9 +83,9 @@
 			}
 			horizontal++
 		}
-		else if(e.keyCode == 40 && y < 500) //down arrow
+		else if(e.keyCode == 70 && y1 < 500) //f - down arrow
 		{
-			y = y+10;
+			y1 = y1+10;
 			if((vertical%2) == 0)
 			{
 				$("#ninja_1").attr("src", "img/down1.png");
@@ -94,59 +97,59 @@
 			vertical++
 		}
 	// Player 2
-		if(e.keyCode == 65 && x > 0) //a - left arrow
+		if(e.keyCode == 37 && x2 > 0) //left arrow
 		{
-			x = x-10;
+			x2 = x2-10;
 			if((horizontal%2) == 0)
 			{
-				$("#ninja_1").attr("src", "img/left1.png");
+				$("#ninja_2").attr("src", "img/left1.png");
 			} 
 			else
 			{
-				$("#ninja_1").attr("src", "img/left2.png");
+				$("#ninja_2").attr("src", "img/left2.png");
 			}
 			horizontal++
 		}
-		else if(e.keyCode == 83 && y > 0) //s - up arrow
+		else if(e.keyCode == 38 && y2 > 0) //up arrow
 		{
-			y = y-10;
+			y2 = y2-10;
 			if((vertical%2) == 0)
 			{
-				$("#ninja_1").attr("src", "img/up1.png");
+				$("#ninja_2").attr("src", "img/up1.png");
 			} 
 			else
 			{
-				$("#ninja_1").attr("src", "img/up2.png");
+				$("#ninja_2").attr("src", "img/up2.png");
 			}
 			vertical++
 		}
-		else if(e.keyCode == 68 && x < 500) //d - right arrow
+		else if(e.keyCode == 39 && x2 < 500) //right arrow
 		{
-			x = x+10;
+			x2 = x2+10;
 			if((horizontal%2) == 0)
 			{
-				$("#ninja_1").attr("src", "img/right1.png");
+				$("#ninja_2").attr("src", "img/right1.png");
 			} 
 			else
 			{
-				$("#ninja_1").attr("src", "img/right2.png");
+				$("#ninja_2").attr("src", "img/right2.png");
 			}
 			horizontal++
 		}
-		else if(e.keyCode == 70 && y < 500) //f - down arrow
+		else if(e.keyCode == 40 && y2 < 500) //down arrow
 		{
-			y = y+10;
+			y2 = y2+10;
 			if((vertical%2) == 0)
 			{
-				$("#ninja_1").attr("src", "img/down1.png");
+				$("#ninja_2").attr("src", "img/down1.png");
 			} 
 			else
 			{
-				$("#ninja_1").attr("src", "img/down2.png");
+				$("#ninja_2").attr("src", "img/down2.png");
 			}
 			vertical++
 		}
-		console.log(e.keyCode, x);
+		console.log(e.keyCode, x1, y1, x2, y2);
 	}
 	console.log(document);
 	</script>
